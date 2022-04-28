@@ -1,0 +1,87 @@
+$colors: ( 
+  main: white,
+  primary: #d1deeb,
+  secondary: darken(#d1deeb, 10%),
+  accent: #e86914,
+  minor: black,
+
+  danger: red,
+);
+
+$fonts: (
+  primary: ('Open Sans', sans-serif),
+);
+
+$shadows: ( 
+  primary: rgba(0, 0, 0, 0.1) 0px 10px 50px,
+  secondary: rgba(0, 0, 0, 0.6) 0px 4px 12px,
+
+);
+
+$transitions: (
+  primary: 0.2s ease,
+);
+
+@function getColor($color) {
+  @return map-get($colors, $color);
+};
+
+@function getFont($font) {
+  @return map-get($fonts, $font);
+};
+
+@function getShadow($shadow) {
+  @return map-get($shadows, $shadow)
+};
+
+@function getTransition($transition) {
+  @return map-get($transitions, $transition)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: getFont(primary);
+  font-size: 1em;
+  background-color: getColor(primary);
+}
+
+button,
+input {
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: getColor(font);
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  padding: 0px 20px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  } to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+%effect-fade {
+  display: block;
+  animation: fade getTransition(primary);
+}

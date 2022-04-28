@@ -1,0 +1,22 @@
+@import '../../index';
+
+.popup{
+  min-width: 0;
+  min-height: 0;
+  @extend %effect-fade;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: getShadow(primary);
+
+  &--active{
+    display: block;
+  }
+
+  &__btn-action{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

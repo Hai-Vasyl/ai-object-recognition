@@ -1,0 +1,79 @@
+@import '../../index';
+
+.field-input{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &--hidden{
+    display: none;
+  }
+
+  &__label{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title{}
+
+  &__info{
+    position: relative;
+    display: none;
+
+    &--active{
+      display: block;
+    }
+
+    &:hover .field-input__msg{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__icon{
+    font-size: 1.15em;
+    vertical-align: middle;
+    color: getColor(danger);
+    cursor: pointer;
+  }
+
+  &__msg{
+    position: absolute;
+    bottom: 27px;
+    right: -2px;
+    background-color: getColor(minor);
+    color: white;
+    font-size: 0.8em;
+    padding: 5px;
+    border-radius: 5px;
+    width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: getTransition(primary);
+  }
+
+  &__triangle{
+    position: absolute; 
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: getColor(minor);
+    bottom: -12px;
+    right: 5px;
+  }
+
+  &__input{
+    border: 2px solid getColor(minor);
+    padding: 5px;
+    transition: getTransition(primary);
+
+    &--error{
+      background-color: getColor(danger);
+    }
+     
+    &:focus {
+      border-color: getColor(accent)
+     }
+  }
+}
