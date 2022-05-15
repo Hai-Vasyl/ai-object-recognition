@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import NavLink from "../nav-link/NavLink";
+import NavLink from "../link-nav/LinkNav";
 import styles from "../navbar/navbar.module.scss";
 import logo from "../../images/circle_logotype.png";
 
